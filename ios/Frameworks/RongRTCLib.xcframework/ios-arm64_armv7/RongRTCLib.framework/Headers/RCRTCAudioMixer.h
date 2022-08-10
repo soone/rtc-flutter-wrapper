@@ -1,6 +1,6 @@
 //
-//  RCRTCAudioMixerEngine.h
-//  RongRTCLib
+//  RCRTCAudioMixer.h
+//  RTCLib
 //
 //  Created by RongCloud on 2019/5/7.
 //  Copyright © 2019 RongCloud. All rights reserved.

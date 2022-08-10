@@ -40,6 +40,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, copy) NSDictionary <NSString *, NSString *> *localUserDatas;
 
+/*!
+ 离开房间是否停止混音和短音效，默认值：YES
+ */
+@property (nonatomic, assign) BOOL stopAudioMixer;
+
 @end
 
 NS_ASSUME_NONNULL_END

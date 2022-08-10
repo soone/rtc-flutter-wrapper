@@ -201,9 +201,9 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  启用扬声器
 
- @param enable YES 启用扬声器；NO 关闭扬声器
+ @param enable 默认值为 YES；YES 启用扬声器；NO 关闭扬声器
  @discussion
- 暂态设置启用或关闭扬声器
+ 暂态设置启用或关闭扬声器，任何用户行为或者音频相关 API 的调用都有可能改变暂态设置
 
  @remarks RCRTCEngine：媒体流操作
  @return 调用成功返回 YES
@@ -213,7 +213,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  设置默认音频路由
 
- @param defaultToSpeaker 默认为 NO，使用听筒作为默认音频路由；YES 使用扬声器作为默认音频路由
+ @param defaultToSpeaker 默认为 NO，不使用扬声器作为默认音频路由；YES 使用扬声器作为默认音频路由
  @discussion
  设置默认的音频路由，就是在没有外接设备的前提下，设置系统使用听筒还是扬声器播放音频。
 

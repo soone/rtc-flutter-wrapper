@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/RCRTCAudioMixer.h</key>
 		<data>
-		jwe2AcCy9r+5nY8UQeYOTB5Q92w=
+		0pN9Qt37Ak6jfAWqdIePhgsh+yU=
 		</data>
 		<key>Headers/RCRTCAudioOutputStream.h</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Headers/RCRTCEngine.h</key>
 		<data>
-		BzabyicvOtdN0ajOFdZRnjhuhl0=
+		GttXaEgmG3H/I52zESQLAezXqaA=
 		</data>
 		<key>Headers/RCRTCEngineEventDelegate.h</key>
 		<data>
@@ -158,7 +158,7 @@
 		</data>
 		<key>Headers/RCRTCRoomConfig.h</key>
 		<data>
-		LJ57LFXc0pOMA64aFoO+nx9HB+0=
+		BuFhYYKjEvgJbMLyB8g4nK27gx4=
 		</data>
 		<key>Headers/RCRTCRoomEventDelegate.h</key>
 		<data>
@@ -246,7 +246,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		bbUfB7U+h56/Vav4uSoQ9vCbJfU=
+		Ya8hqMxPLsy41BmDSC9crdVQL5w=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -292,11 +292,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			jwe2AcCy9r+5nY8UQeYOTB5Q92w=
+			0pN9Qt37Ak6jfAWqdIePhgsh+yU=
 			</data>
 			<key>hash2</key>
 			<data>
-			uuMzX+VQuWFfxlUaOVinqAk+nXDrC52fLTYcOnNR398=
+			RH6evbHzEl7P1Lh9JHCoVWdMkyQzeVPAvZgXMJqAWxY=
 			</data>
 		</dict>
 		<key>Headers/RCRTCAudioOutputStream.h</key>
@@ -435,11 +435,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			BzabyicvOtdN0ajOFdZRnjhuhl0=
+			GttXaEgmG3H/I52zESQLAezXqaA=
 			</data>
 			<key>hash2</key>
 			<data>
-			94lAMGAd/dQuqiJAz+s2Wh7hoNpvrNIjVGp26Jpsmic=
+			t0ahkZ3tWGlq8Q/V/bPYYR+xqx8IC9RxPBOw1XCq35M=
 			</data>
 		</dict>
 		<key>Headers/RCRTCEngineEventDelegate.h</key>
@@ -677,11 +677,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			LJ57LFXc0pOMA64aFoO+nx9HB+0=
+			BuFhYYKjEvgJbMLyB8g4nK27gx4=
 			</data>
 			<key>hash2</key>
 			<data>
-			gQZUftxQJPqOaHhdhd/2VraUmzeiB/NQoz8SNVAc2PY=
+			Pwy0shWfrm8D8AxR11sMTDi05/uLl5/o8Ekvt9a9UuE=
 			</data>
 		</dict>
 		<key>Headers/RCRTCRoomEventDelegate.h</key>
