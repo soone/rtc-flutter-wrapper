@@ -78,7 +78,7 @@ public final class RCRTCEngineWrapper implements MethodCallHandler {
         return code;
     }
 
-    public int setRemoteAudioReceivedListener(String userId, RCRTCIWOnReadableAudioFrameListenerr listener) {
+    public int setRemoteAudioReceivedListener(String userId, RCRTCIWOnWritableAudioFrameListener listener) {
         int code = -1;
         if (engine != null) {
             code = engine.setRemoteAudioReceivedListener(userId, listener);
