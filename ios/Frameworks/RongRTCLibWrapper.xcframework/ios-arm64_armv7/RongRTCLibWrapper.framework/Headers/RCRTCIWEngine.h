@@ -10,12 +10,15 @@
 #import "RCRTCIWStatsDelegate.h"
 #import "RCRTCIWAudioFrameDelegate.h"
 #import "RCRTCIWVideoFrameDelegate.h"
+#import "RCRTCIWNetworkProbeDelegate.h"
 #import "RCRTCIWEngineSetup.h"
 #import "RCRTCIWRoomSetup.h"
 #import "RCRTCIWAudioConfig.h"
 #import "RCRTCIWVideoConfig.h"
 #import "RCRTCIWView.h"
 #import "RCRTCIWCustomLayout.h"
+#import "RCRTCIWRect.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RCRTCIWEngine : NSObject
@@ -954,6 +957,84 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSInteger)setLiveMixInnerCdnStreamView:(RCRTCIWView *)view;
 
 - (NSInteger)removeLiveMixInnerCdnStreamView;
+/**
+ 观众端设置订阅 cdn 流的分辨率
+ @param width 宽
+ @param height 高
+ // 高 x 宽
+ // 176x144
+ // 180x180
+ // 256x144
+ // 240x180
+ // 320x180
+ // 240x240
+ // 320x240
+ // 360x360
+ // 480x360
+ // 640x360
+ // 480x480
+ // 640x480
+ // 720x480
+ // 848x480
+ // 960x720
+ // 1280x720
+ // 1920x1080
+ */
+- (NSInteger)setLocalLiveMixInnerCdnVideoResolution:(NSUInteger)width height:(NSUInteger)height;
+
+/**
+ 观众端 设置订阅 cdn 流的帧率
+ @param fps 帧率
+ */
+- (NSInteger)setLocalLiveMixInnerCdnVideoFps:(RCRTCIWVideoFps)fps;
+
+/*!
+ 观众端禁用或启用融云内置 CDN 流
+ @param mute YES: 停止资源渲染，NO: 恢复资源渲染
+ */
+- (NSInteger)muteLiveMixInnerCdnStream:(BOOL)mute;
+
+#pragma mark - 水印
+
+/**
+ 实现为相机/自定义文件/共享桌面采集到的视频流添加水印的功能。每一道视频流水印设置是独立的。
+ 不支持设置多个水印
+ @param image     水印图片
+ @param rect       水印的位置和宽高
+ rect 参数取值范围 0 ~ 1，SDK 内部会根据视频分辨率计算水印实际的像素位置和尺寸。
+ */
+- (NSInteger)setWaterMark:(UIImage *)image rect:(RCRTCIWRect *)rect;
+
+/**
+ 移除水印
+ */
+- (NSInteger)removeWaterMark;
+
+#pragma mark - 设置检测
+/**
+ 麦克风 & 扬声器检测
+ @param timeInterval 表示获取本次测试结果的间隔时间。该参数单位为s，取值范围为 [2 10]，小于 2 按 2s 处理，大于 10 按 10s 处理。
+ */
+- (NSInteger)startEchoTest:(NSInteger)timeInterval;
+
+/**
+ 停止麦克风 & 扬声器检测
+ */
+- (NSInteger)stopEchoTest;
+
+#pragma mark - 网络探测
+
+/**
+ 加入房间前，调用 startNetworkProbe： 开启网络质量探测。开启探测成功后，会通过 onRTCProbeStatus 回调来反馈探测结果。每隔约 2 秒回调一次上下行网络的带宽、丢包、网络抖动和往返时延等数据。
+ 探测总时长约为 30 秒，30 秒后会自动停止探测并调用 onNetworkProbeCompleted 回调方法通知上层应用探测结束。
+ @warning 注意，在探测自动结束 onNetworkProbeCompleted 前，如调用 joinRoom 加房间操作会打断当前正在进行的 RTC 网络探测。
+ */
+- (NSInteger)startNetworkProbe:(id<RCRTCIWNetworkProbeDelegate> _Nullable)delegate;
+
+/**
+ 开启探测成功约 30 秒后，会自动停止探测，如果不想等待自动结束，可主动调用 stopRTCProbeTest: 方法强制停止探测。
+ */
+- (NSInteger)stopRTCProbeTest;
 
 #pragma mark - Version
 /*!

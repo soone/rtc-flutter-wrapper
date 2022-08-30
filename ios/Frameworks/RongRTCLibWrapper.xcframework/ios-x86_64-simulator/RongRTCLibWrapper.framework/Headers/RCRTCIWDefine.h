@@ -34,18 +34,20 @@ typedef NS_ENUM(NSUInteger, RCRTCIWVideoCodecType) {
  设置音频通话质量类型
  */
 typedef NS_ENUM(NSInteger, RCRTCIWAudioQuality) {
-    RCRTCIWAudioQualitySpeech = 0,         // 人声音质，编码码率最大值为 32Kbps
-    RCRTCIWAudioQualityMusic,          // 标清音乐音质，编码码率最大值为 64Kbps
-    RCRTCIWAudioQualityMusicHigh      // 高清音乐音质，编码码率最大值为 128Kbps
+    RCRTCIWAudioQualityGaming = 0,      // 游戏音质，编码码率最大值为 16Kbps
+    RCRTCIWAudioQualitySpeech,          // 人声音质，编码码率最大值为 32Kbps
+    RCRTCIWAudioQualityMusic,           // 标清音乐音质，编码码率最大值为 64Kbps
+    RCRTCIWAudioQualityMusicHigh        // 高清音乐音质，编码码率最大值为 128Kbps
 };
 
 /*!
  设置音频通话模式
  */
 typedef NS_ENUM(NSInteger, RCRTCIWAudioScenario) {
-    RCRTCIWAudioScenarioDefault = 0,        // 普通通话模式(普通音质模式), 满足正常音视频场景
-    RCRTCIWAudioScenarioMusicChatRoom,      // 音乐聊天室模式, 提升声音质量, 适用对音乐演唱要求较高的场景
-    RCRTCIWAudioScenarioMusicClassRoom      // 音乐教室模式, 提升声音质量, 适用对乐器演奏音质要求较高的场景
+    RCRTCIWAudioScenarioDefault = 0,            // 普通通话模式(普通音质模式), 满足正常音视频场景
+    RCRTCIWAudioScenarioMusicChatRoom,          // 音乐聊天室模式, 提升声音质量, 适用对音乐演唱要求较高的场景
+    RCRTCIWAudioScenarioMusicClassRoom,         // 音乐教室模式, 提升声音质量, 适用对乐器演奏音质要求较高的场景
+    RCRTCIWAudioScenarioGamingChatRoom          // 游戏聊天模式
 };
 
 /*!
@@ -83,6 +85,20 @@ typedef NS_ENUM(NSInteger, RCRTCIWRole) {
     RCRTCIWRoleMeetingMember = 0,      // 会议类型房间中用户
     RCRTCIWRoleLiveBroadcaster,        // 直播类型房间中主播
     RCRTCIWRoleLiveAudience            // 直播类型房间中观众
+};
+
+/*!
+ 同一 UserID 多端加入房间处理类型
+ */
+typedef NS_ENUM(NSUInteger, RCRTCIWJoinType) {
+    /*!
+     将之前加入房间的端踢出房间
+     */
+    RCRTCIWJoinTypeKick = 0,
+    /*!
+     拒绝当前端加入房间
+     */
+    RCRTCIWJoinTypeRefuse = 1,
 };
 
 /*!
@@ -172,6 +188,20 @@ typedef NS_ENUM(NSInteger, RCRTCIWStreamType) {
     RCRTCIWStreamTypeFile,
     RCRTCIWStreamTypeScreen,
     RCRTCIWStreamTypeCDN
+};
+
+typedef NS_ENUM(NSInteger, RCRTCIWNetworkQualityLevel) {
+    RCRTCIWNetworkQualityLevelExcellent = 0,
+    RCRTCIWNetworkQualityLevelGood,
+    RCRTCIWNetworkQualityLevelPool,
+    RCRTCIWNetworkQualityLevelBad,
+    RCRTCIWNetworkQualityLevelVeryBad,
+    RCRTCIWNetworkQualityLevelDown,
+};
+
+typedef NS_ENUM(NSInteger, RCRTCIWStreamDirection) {
+    RCRTCIWStreamDirectionUplink   = 1,
+    RCRTCIWStreamDirectionDownlink = 2,
 };
 
 #endif /* RCRTCIWDefine_h */

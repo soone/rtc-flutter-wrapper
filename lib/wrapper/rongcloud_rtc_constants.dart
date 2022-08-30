@@ -38,6 +38,7 @@ enum RCRTCVideoCodecType {
 }
 
 enum RCRTCAudioQuality {
+  gaming,
   speech,
   music,
   music_high,
@@ -47,6 +48,7 @@ enum RCRTCAudioScenario {
   normal,
   music_chatroom,
   music_classroom,
+  gaming_chatroom,
 }
 
 enum RCRTCVideoFps {

@@ -22,6 +22,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, assign) RCRTCIWRole role;
 
+/**
+ 用户进行多端登录时的加入策略
+ */
+@property (nonatomic, assign) RCRTCIWJoinType joinType;
+
 @end
 
 NS_ASSUME_NONNULL_END

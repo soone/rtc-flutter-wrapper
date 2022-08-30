@@ -739,6 +739,36 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)onLiveMixInnerCdnStreamUnsubscribed:(NSInteger)code
                                     message:(NSString *)errMsg;
 
+- (void)onLocalLiveMixInnerCdnVideoResolutionSet:(NSInteger)code
+                                         message:(NSString *)errMsg;
+
+- (void)onLocalLiveMixInnerCdnVideoFpsSet:(NSInteger)code
+                                  message:(NSString *)errMsg;
+
+/**
+ 设置水印回调
+ */
+- (void)onWaterMarkSet:(NSInteger)code
+               message:(NSString *)errMsg;
+
+/**
+ 删除水印回调
+ */
+- (void)onWaterMarkRemoved:(NSInteger)code
+                   message:(NSString *)errMsg;
+
+/**
+ 网络探测开始
+ */
+- (void)onNetworkProbeStarted:(NSInteger)code
+                      message:(NSString *)errMsg;
+
+/**
+ 网络探测停止
+ */
+- (void)onNetworkProbeStopped:(NSInteger)code
+                      message:(NSString *)errMsg;
+
 @end
 
 NS_ASSUME_NONNULL_END
